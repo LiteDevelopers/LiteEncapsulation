@@ -4,7 +4,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiJavaFile
 
 
-public fun fromPsiElements(from: PsiElement, to: PsiElement): DependencyScope {
+fun scopeOf(from: PsiElement, to: PsiElement): DependencyScope {
     val currentFile = from.containingFile as? PsiJavaFile
         ?: return DependencyScope.UNKNOWN
     val otherFile = to.containingFile as? PsiJavaFile
